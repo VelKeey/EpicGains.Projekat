@@ -1,0 +1,42 @@
+﻿ create table Korisnici
+ (
+	
+	KorisnikID int primary key identity(1,1),
+	Ime nvarchar(50),
+	Adresa nvarchar(50),
+	brojTelefona nvarchar(50),
+	kreditnaKartica varchar(25),
+
+ )
+
+ create table Porudzbina
+ (
+	
+	PorudzbinaID int primary key identity(1,1),
+	KorisnikID int foreign key references Korisnici(KorisnikID) not null,
+	VrstaDostave nvarchar(50),
+	ProizvodiID int foreign key references Proizvodi(ProizvodiID) not null,
+
+ )
+
+ create table Proizvodi
+ (
+	
+	ProizvodiID int primary key identity(1,1),
+	Naziv nvarchar(50),
+	Cena int,
+
+ )
+
+ Insert into Proizvodi(Naziv,Cena) values('BioTechUSA',50)
+
+ Insert into Proizvodi(Naziv,Cena) values('Maxer',100)
+ 
+ Insert into Proizvodi(Naziv,Cena) values('Olimp',130)
+
+  
+
+
+
+
+
